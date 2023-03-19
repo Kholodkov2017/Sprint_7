@@ -27,7 +27,7 @@ public class CreateOrderModel {
     private String comment;
     private String[] color;
 
-    public static CreateOrderModel createOrderModel(ScooterColorEnum... colors) {
+    public static CreateOrderModel createOrderModel(String metroStation, ScooterColorEnum... colors) {
         String[] colorData = Arrays.stream(colors).map(Enum::name).toArray(String[]::new);
         Faker faker = new Faker(new Locale("ru-RU"));
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -36,7 +36,7 @@ public class CreateOrderModel {
                 .firstName(faker.name().firstName())
                 .lastName(faker.name().lastName())
                 .address(faker.address().fullAddress())
-                .metroStation("Метро Белорусская")
+                .metroStation(metroStation)
                 .phone(faker.phoneNumber().phoneNumber())
                 .deliveryDate(sdf.format(faker.date().future(1, TimeUnit.DAYS)))
                 .rentTime(faker.random().nextInt(1, 10))

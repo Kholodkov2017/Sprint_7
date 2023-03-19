@@ -18,6 +18,7 @@ public class CreateCourierModel {
     private String password;
     private String firstName;
 
+
     public static CreateCourierModel createFakeCourier() {
         Faker faker = new Faker();
         return builder()
