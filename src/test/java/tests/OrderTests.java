@@ -33,7 +33,7 @@ public class OrderTests  extends TestBase {
         }
         CreateOrderModel order = CreateOrderModel.createOrderModel(metroStation, colors);
         makeSuccessfulScooterOrder(order)
-                .statusCode(HttpStatus.SC_CREATED)
+                .statusCode(HttpStatus.SC_BAD_REQUEST) // <------ СОЗНАТЕЛЬНАЯ ОШИБКА
                 .body("track", greaterThan(0));
     }
 
