@@ -14,11 +14,10 @@ import java.util.Arrays;
 
 import static api.client.OrdersClient.makeSuccessfulScooterOrder;
 import static api.client.OrdersClient.successfullyCreateOrder;
-import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
 @RunWith(JUnitParamsRunner.class)
-public class OrderTests {
+public class OrderTests  extends TestBase {
 
     @Test
     @DisplayName("Ability to order a scooter")
